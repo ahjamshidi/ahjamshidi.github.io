@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>snappFood deep link genrator</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+</head>
+<body style="width:100%;text-align:center">
+<h1>snappFood deep link genrator</h1>
+<h4>Please enter vendor collection id in below field &#128071; &#128071;</h4>
+<input type="number" placeholder="please enter vendor_collection id" id="vendorId">
+<input type="submit" onclick="generateLink()">
+<h3>Please check on mobile before check</h3>
+<div style="padding: 40px;width: 60%;border: 1px solid #ccc;margin: 10px auto;text-align: left;overflow-wrap: break-word;">
+<div >
+<strong style="color:red">android</strong>
+<br>
+<code id="genarated-link-android"></code>
+</div>
+<div>
+<strong style="color:red">ios:</strong>
+<br>
+<code id="genarated-link-ios"></code>
+</div>
+
+<!--<input type="submit" onclick="copyLink()" value="copy on clipboard">-->
+</div>
+<script>
+var deepLink = 'https://snappfood.ir/restaurant/city/Tehran/near/1386?extraFilter={"vendor_collection":CollectionId,"distance_sort":true,"vendor_count_respect":false,"vendor_collection_view_mode":"","banner_collection":false,"new_home":false,"new_home_section":"","page_supertype":[],"user_base_list":false,"only_vendor_ids":null}';
+encodedLink='';
+function generateLink(){
+	var vid = document.getElementById('vendorId').value;
+	if(vid == ""){
+		alert("please enter vendor collection id");
+		return;
+
+	}
+	getLink = deepLink.replace('CollectionId',vid);
+	console.log(encodeURI(getLink));
+	encodedLink = encodeURI(getLink)
+document.getElementById('genarated-link-android').innerHTML  = '<a href="'+encodedLink+'">'+encodedLink+'</a>';
+document.getElementById('genarated-link-ios').innerHTML  = '<a href="'+encodedLink+'">'+encodedLink.replace('https://','snf://')+'</a>';
+}
+
+</script>
+</body>
+</html>
