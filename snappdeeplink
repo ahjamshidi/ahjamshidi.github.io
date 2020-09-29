@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>snapp deep link test</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+</head>
+<body style="width:100%;text-align:center">
+<a href="snapp://open/services/6?url=https://superapp.snappfood.ir/restaurant?superType=3">لینک شیرینی </a>
+</body>
+</html>
