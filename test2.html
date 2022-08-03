@@ -1,1 +1,18 @@
 
+<html>
+<head>
+<title>snappFood deep link test</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+</head>
+<body style="width:100%;text-align:center">
+<div id="main">
+</div>
+<a href="snapp://open/services/6?url=https://superapp.snappfood.ir/restaurant?extraFilter=%7B%22vendor_collection%22:423%7D">snapp test</a>
+
+<script>
+
+document.getElementById('main').innerHTML  = window.location.search;
+</script>
+</body>
+</html>
+
